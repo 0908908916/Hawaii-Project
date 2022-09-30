@@ -1,0 +1,21 @@
+/*  height with percentage  */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 先設定這個 下面就會出現高度 */
+html, body {
+    height: 100%;
+}
+
+
+/* 沒有上面這行 % 的話 height 是沒用的 */
+div.black {
+    background-color: black;
+    width: 300px;
+    height: 100%;
+}

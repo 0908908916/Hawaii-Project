@@ -1,0 +1,229 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans TC", sans-serif; /* 改變字體 */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  position: -webkit-sticky;
+  position: sticky; /* 這個標籤往下拉會跟著移動 設 top: 0; */
+  top: 0;
+  z-index: 5; /* 會變成在圖片上方 */
+  background-color: white; /* 背景設成白色 */
+  box-shadow: 3px 3px 5px 1px rgb(100, 98, 98); /* 這個  box-shadow 可以從css tricks 網站找 讓網頁標題有漸層 區分同顏色  */
+}
+header div.logo {
+  display: flex;
+  align-items: center;
+  flex: 5 1 400px;
+  margin-left: 2rem;
+}
+header div.logo img {
+  width: 8vw;
+  height: 8vw;
+}
+header nav {
+  flex: 2 1 400px;
+}
+header nav ul {
+  display: flex;
+  list-style-type: none;
+  font-size: 1.35rem;
+  justify-content: space-around; /* 字的間距 */
+}
+header nav ul li a {
+  color: #09777b;
+}
+
+main section.backTmage {
+  min-height: 90vh; /* 設定最小高度 */
+  width: 100%;
+  background-image: url(../夏威夷租借網站/Pictures/pexels-photo-416676.jpeg); /* 抓背景圖片 */
+  background-size: cover;
+  background-position: center; /* 置中 */
+  position: relative; /* 相對的位置 */
+  z-index: 0;
+  display: flex;
+  justify-content: center; /* 位置置中 */
+  align-items: center; /* 位置置中 */
+  flex-direction: column; /* 讓字的位置變成直列的 */
+  text-align: center; /* 文字置中 */
+}
+main section.backTmage h3 {
+  font-size: 3.5rem; /* 改字體的大小 */
+  color: white;
+  margin: 1rem 0rem; /* 間隔 */
+}
+main section.backTmage button.start {
+  background-color: #078285;
+  padding: 0.75rem 1.5rem; /* 文字與框的間距 */
+  font-size: 1.5rem; /* 字體大小 */
+  color: black;
+  border: none; /* 把外框去除掉 */
+  border-radius: 1rem; /* 讓外框變圓弧的 */
+  cursor: pointer; /* 讓游鰾一過去有一個小手指的圖 因為把外框去掉沒有任何反應 */
+}
+main section.backTmage div.fiter {
+  background-color: rgba(0, 0, 0, 0.5); /* 讓背景有暗暗的感覺 0.2 設定透明度 */
+  width: 100%;
+  min-height: 90vh; /* 最小高度 */
+  position: absolute; /* 設定絕對位置 */
+  top: 0; /* 當position設置absolute或fixed時，top屬性指定用於定位上外邊的地方為另一個包含在該處的位置之間的轉移 */
+  z-index: -1; /* Z-index 可以用來設置元素的 Z 方向位置，z-index 數字越大的在越上面，反之則在越下面。 */
+}
+
+section.second {
+  display: flex;
+  flex-direction: column; /* 直列 */
+  align-items: center;
+  text-align: center;
+}
+section.second h2 {
+  font-size: 1.5rem;
+  margin: 2rem 1rem;
+}
+section.second section.cards {
+  display: flex;
+  width: 80%;
+  min-height: 80vh;
+  flex-wrap: wrap;
+}
+section.second section.cards div.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around; /* 讓他得排版必較好看 */
+  padding: 1rem;
+  flex: 1 1 300px; /* 設定flex-grow 寬度才會一樣 */
+}
+section.second section.cards div.card div.image-container {
+  overflow: hidden; /* 設定以下圖片才不會超過圓 跟下面一樣的 width height border-radius */
+  width: 15vw;
+  height: 15vw;
+  border-radius: 50%;
+}
+section.second section.cards div.card div.image-container img {
+  width: 15vw;
+  height: 15vw;
+  border-radius: 50%; /* 框變圓的 */
+  transition: all 0.2s; /* 要再設定這個效果 */
+}
+section.second section.cards div.card div.image-container img:hover {
+  transform: scale(1.2); /* 滑鼠游標一過去圖片會變大效果 搭配上方 */
+}
+section.second section.cards div.card h4 {
+  font-size: 2rem;
+  margin: 1rem 0rem;
+}
+section.second section.cards div.card p {
+  font-size: 1.25rem;
+}
+section.second section.cards div.card a {
+  margin: 1rem 0rem;
+  text-decoration: none;
+  padding: 1rem 1.5rem;
+  background-color: #09777b;
+  color: white;
+  font-size: 1.25rem;
+}
+
+/* 設定旁邊卷軸的樣式  Firefox網站看不到 要到谷歌看 */
+/* 寬度 width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* 卷軸背景色  trach */
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+/* 卷軸顏色 handle */
+::-webkit-scrollbar-thumb {
+  background-color: #09777b;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 40vh;
+  justify-content: space-around;
+  background-color: rgb(207, 207, 207);
+}
+footer div.logo {
+  display: flex;
+  align-items: center;
+}
+footer div.logo img {
+  width: 8vw;
+  height: 8vw;
+}
+footer nav {
+  width: 30%;
+}
+footer nav ul {
+  display: flex;
+  list-style-type: none;
+  width: 100%;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+footer nav ul li {
+  flex-basis: 100px; /* 螢幕縮小會變直列的 */
+}
+footer nav ul li a {
+  color: black;
+  font-weight: 600; /* 字的寬度 */
+  text-decoration: none;
+  font-size: 1.35rem;
+}
+footer section.links a {
+  margin: 0rem 1rem;
+}
+footer section.links a img {
+  width: 5vw;
+  height: 5vw;
+}
+
+/* 底下設定的是 視窗拉小會變的模樣 */
+@media screen and (max-width: 700) {
+  main section.second section.cards div.card img {
+    width: 50vw;
+    height: 50vw;
+  }
+}
+@media screen and (max-width: 550px) {
+  header div.logo {
+    margin-left: 0.5rem;
+  }
+  header div.logo img {
+    width: 15vw;
+    height: 15vw;
+  }
+  footer div.logo img {
+    width: 15vw;
+    height: 15vw;
+  }
+  footer section.links {
+    margin-top: 1rem;
+  }
+  footer section.links a img {
+    width: 10vw;
+    height: 10vw;
+  }
+}/*# sourceMappingURL=style.css.map */
